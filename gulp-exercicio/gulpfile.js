@@ -67,18 +67,19 @@ function tarefasHTML() {
     .pipe(gulp.dest('./dist'));
 }
 
-// ...
 
 // Tarefa 'serve'
 gulp.task('serve', function () {
     browserSync.init({
       server: {
-        baseDir: "./dist"
+        baseDir: "./",
+        startPath: "/dist"
       }
     });
   
     gulp.watch('./src/**/*', series(tarefasHTML, tarefasJS, tarefasCSS)).on('change', reload);
   });
+  
 
 // Tarefa 'watch'
 gulp.task('watch', function () {
