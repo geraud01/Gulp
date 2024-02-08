@@ -93,7 +93,7 @@ function end(cb) {
 }
 
 // Tarefa 'default' que engloba todas as outras tarefas
-const defaultTask = series(parallel(tarefasHTML, tarefasJS, tarefasCSS), end);
+const defaultTask = series(parallel(tarefasHTML, tarefasJS, tarefasCSS, tarefasImagem), end);
 
 // Exportando as tarefas
 exports.styles = tarefasCSS;
